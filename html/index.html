@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rent A Car</title>
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="../Assets/Style/style.css" />
+
+    <!-- CDNJS Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- CDNJS Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+
+    <!-- CDNJS Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar Start -->
+    <div class="navigation-bar">
+      <a href="" class="head-title">car <span>rent</span></a>
+      <ul class="nav-item">
+        <li><a href="#home">home</a></li>
+        <li><a href="#how">how it works</a></li>
+        <li><a href="#service">service</a></li>
+        <li><a href="#testi">testimonials</a></li>
+        <li><a href="#faq">faq</a></li>
+      </ul>
+      <div class="account-box">
+        <div class="box login-bar">
+          <p>login</p>
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </div>
+        <div class="box signup-bar">
+          <p>sign up</p>
+          <i class="fa-solid fa-user-plus"></i>
+        </div>
+      </div>
+      <div class="menu-toggle" onclick="toggleMenu()"></div>
+    </div>
+    <!-- Navigation Bar End -->
+
+    <!-- Home Page Start -->
+    <div class="home-page section">
+      <div class="container">
+        <div class="content">
+          <div class="head-title">
+            Easy Way <br />
+            to rent a <span> dream car</span><br />at an affordable
+            <span>price!</span>
+          </div>
+          <div class="sub-title">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur.
+          </div>
+          <div class="download-box">
+            <div class="content-box">
+              <div class="box">
+                <img src="../Assets/Image/Apps-store.png" alt="" />
+              </div>
+              <div class="box">
+                <img src="../Assets/Image/Plays-store.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="image-box">
+            <img src="../Assets/Image/Image-1.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Home Page End -->
+
+    <!-- Calculator Page Start -->
+
+    <div class="calc-page section">
+      <div class="head-title" data-small-title="calculator">
+        Car rental cost calculator
+      </div>
+      <div class="sub-title">
+        Use our loan calculator to calculate payments of your loan. Enter your
+        information to see how much your payments could be. You can adjust
+        length of loan, car price category and more to see how those changes
+        raise or lower your payments.
+      </div>
+
+      <div class="range-box">
+        <label for="range" class="range-title"
+          >Estimated number of kilometers to be driven:</label
+        >
+        <input
+          class="range"
+          id="range"
+          type="range"
+          value="0"
+          min="0"
+          max="10000"
+          step="100"
+          oninput="rangeSlider(this.value)"
+          oninput="updateValue(this.value)"
+          required
+        />
+        <span class="range-value" id="rangeValue">0</span>
+      </div>
+
+      <div class="input-group">
+        <div class="input-item">
+          <input class="input" type="number" id="licenseYear" required />
+          <label class="label" for="licenseYear"
+            >Year of driving license obtaining</label
+          >
+        </div>
+
+        <div class="input-item ">
+          <input class="input" type="date" id="startDate" required />
+          <input class="input" type="date" id="endDate" required />
+          <label class="label" for="rentalDates">Car rental dates:</label>
+        </div>
+        <div class="input-item">
+          <input class="input" type="number" id="fuelPrice" required />
+          <label class="label" for="fuelPrice">Fuel Price (per liter):</label>
+        </div>
+
+        <div class="input-item">
+          <select class="input" id="carCategory" required>
+            <option value="basic">Basic</option>
+            <option value="standard">Standard</option>
+            <option value="medium">Medium</option>
+            <option value="premium">Premium</option>
+          </select>
+          <label class="label" for="carCategory">Car price category:</label>
+        </div>
+
+        <div class="input-item">
+          <select class="input" id="carLocation" required>
+            <option value="local">Local</option>
+            <option value="abroad">Abroad</option>
+          </select>
+          <label class="label" for="carLocation">Car location:</label>
+        </div>
+
+        <div class="input-item">
+          <input class="input" type="number" id="baseRentalPrice" required />
+          <label class="label" for="baseRentalPrice"
+            >Base rental price per day:</label
+          >
+        </div>
+
+        <div class="input-item">
+          <input class="input" type="number" id="averageConsumption" required />
+          <label class="label" for="averageConsumption"
+            >Average fuel consumption /100km:</label
+          >
+        </div>
+
+        <div class="input-item">
+          <input class="input" type="number" id="availableCars" required />
+          <label class="label" for="availableCars"
+            >Number of available models of a car:</label
+          >
+        </div>
+
+        <button class="calc-button" onclick="calculateCost()">
+          Calculate costs
+        </button>
+
+        <div id="result" class="result"></div>
+      </div>
+    </div>
+    <!-- Calculator Page End -->
+
+    <!-- How It Work Page Start -->
+    <div class="how-it-works-page section" id="work">
+      <div class="head-title" data-small-title="how it works">
+        Easy steps to rent
+      </div>
+      <div class="container">
+        <div class="box-item">
+          <div class="item">
+            <i class="fa-solid fa-location-crosshairs"></i>
+            <div class="head-title">set point</div>
+            <div class="sub-title">Lorem ipsum dolor sit amet.</div>
+          </div>
+          <div class="item">
+            <i class="fa-solid fa-calendar"></i>
+            <div class="head-title">select a date</div>
+            <div class="sub-title">Lorem ipsum dolor sit amet.</div>
+          </div>
+          <div class="item">
+            <i class="fa-solid fa-car"></i>
+            <div class="head-title">book a car</div>
+            <div class="sub-title">Lorem ipsum dolor sit amet.</div>
+          </div>
+          <div class="item">
+            <i class="fa-regular fa-square-check"></i>
+            <div class="head-title">adjust needs</div>
+            <div class="sub-title">Lorem ipsum dolor sit amet.</div>
+          </div>
+          <div class="item">
+            <i class="fa-solid fa-dollar-sign"></i>
+            <div class="head-title">make a deal</div>
+            <div class="sub-title">Lorem ipsum dolor sit amet.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- How It Work Page End -->
+
+    <!-- Milestone Page Start -->
+    <div class="milestone-page">
+      <div class="container">
+        <div class="milestone-box">
+          <div class="milestone">5,0</div>
+          <div class="milestone-info">rating</div>
+        </div>
+        <div class="milestone-box">
+          <div class="milestone">999</div>
+          <div class="milestone-info">available vehicle</div>
+        </div>
+        <div class="milestone-box">
+          <div class="milestone">999</div>
+          <div class="milestone-info">rent of month</div>
+        </div>
+        <div class="milestone-box">
+          <div class="milestone">99,999</div>
+          <div class="milestone-info">rent record</div>
+        </div>
+      </div>
+    </div>
+    <!-- Number Page End -->
+
+    <!-- Service Page Start -->
+    <div class="service-page section" id="service">
+      <div class="container">
+        <div class="box">
+          <div class="image-box">
+            <img src="../Assets/Image/Image-2.png" alt="" />
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="head-title" data-small-title="service">Best service</div>
+          <div class="sub-title">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil non
+            sapiente numquam asperiores, est, veritatis ducimus quis.
+          </div>
+
+          <div class="service-content">
+            <div class="service-item">
+              <div class="logo">
+                <i class="bi bi-map"></i>
+                <i class="bi bi-map-fill"></i>
+              </div>
+              <div class="service-info">
+                <div class="head-title">location</div>
+                <div class="sub-title">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Autem, fugiat?
+                </div>
+              </div>
+            </div>
+
+            <div class="service-item">
+              <div class="logo">
+                <i class="bi bi-tag"></i>
+                <i class="bi bi-tag-fill"></i>
+              </div>
+              <div class="service-info">
+                <div class="head-title">price</div>
+                <div class="sub-title">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Autem, fugiat?
+                </div>
+              </div>
+            </div>
+
+            <div class="service-item">
+              <div class="logo">
+                <i class="bi bi-bookmark-star"></i>
+                <i class="bi bi-bookmark-star-fill"></i>
+              </div>
+              <div class="service-info">
+                <div class="head-title">variety</div>
+                <div class="sub-title">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Autem, fugiat?
+                </div>
+              </div>
+            </div>
+
+            <div class="service-item">
+              <div class="logo">
+                <i class="bi bi-telephone"></i>
+                <i class="bi bi-telephone-fill"></i>
+              </div>
+              <div class="service-info">
+                <div class="head-title">24/7 support</div>
+                <div class="sub-title">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Autem, fugiat?
+                </div>
+              </div>
+            </div>
+
+            <div class="service-item">
+              <div class="logo">
+                <i class="bi bi-megaphone"></i>
+                <i class="bi bi-megaphone-fill"></i>
+              </div>
+              <div class="service-info">
+                <div class="head-title">promos everyday</div>
+                <div class="sub-title">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Autem, fugiat?
+                </div>
+              </div>
+            </div>
+
+            <div class="service-item">
+              <div class="logo">
+                <i class="bi bi-speedometer"></i>
+                <i class="bi bi-circle-fill"></i>
+              </div>
+              <div class="service-info">
+                <div class="head-title">milage unlimited</div>
+                <div class="sub-title">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Autem, fugiat?
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Service Page End -->
+
+    <!-- Car Page Start -->
+    <div class="car-page section" id="car">
+      <div class="find-car-bar">
+        <div class="left-container">
+          <div class="text-title">
+            <div class="head-title">Book car in easy steps</div>
+
+            <div class="sub-title">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Obcaecati, earum!
+            </div>
+          </div>
+
+          <div class="bottom-box">
+            <div class="left-box">
+              <div class="circle-profile">
+                <img src="../Assets/Image/Image-5.jpg" alt="" />
+              </div>
+              <div class="circle-profile">
+                <img src="../Assets/Image/Image-5.jpg" alt="" />
+              </div>
+              <div class="circle-profile">
+                <img src="../Assets/Image/Image-5.jpg" alt="" />
+              </div>
+              <div class="circle-profile">
+                <img src="../Assets/Image/Image-5.jpg" alt="" />
+              </div>
+              <div class="circle-profile">+</div>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="right-box">
+              <div class="star-box">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p>check out our customers opinions</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-container">
+          <form action="" class="form-container">
+            <div class="top-box">
+              <label for="pick-up-adress">
+                <i class="fa-solid fa-map-pin"></i>
+                pick-up adress
+              </label>
+              <input type="text" name="pick-up-adress" />
+            </div>
+
+            <div class="bottom-box">
+              <div class="box">
+                <label for="pick-up-date">
+                  <i class="fa-solid fa-calendar"></i>
+                  pick-up date
+                </label>
+                <input type="date" name="pick-up-date" />
+              </div>
+              <div class="box">
+                <label for="pick-up-time">
+                  <i class="fa-solid fa-clock"></i>
+                  pick-up time
+                </label>
+                <input type="time" name="pick-up-time" />
+              </div>
+            </div>
+          </form>
+          <form action="" class="form-container">
+            <div class="top-box">
+              <label for="drop-off-adress">
+                <i class="fa-solid fa-map-pin"></i>
+                drop-off adress
+              </label>
+              <input type="text" name="drop-off-adress" />
+            </div>
+
+            <div class="bottom-box">
+              <div class="box">
+                <label for="drop-off-date">
+                  <i class="fa-solid fa-calendar"></i>
+                  drop-off date
+                </label>
+                <input type="date" name="drop-off-date" />
+              </div>
+              <div class="box">
+                <label for="drop-off-time">
+                  <i class="fa-solid fa-clock"></i>
+                  drop-off time
+                </label>
+                <input type="time" name="drop-off-time" />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="car-container">
+        <div class="filter-car-bar">
+          <div class="head-title">
+            find car<i class="fa-solid fa-bullseye"></i>
+          </div>
+
+          <div class="car-category-container">
+            <div class="car-category">
+              <div class="top-box">
+                <div class="head-title">car category</div>
+                <div class="show-button"></div>
+              </div>
+
+              <div class="category-content">
+                <div class="category-car">
+                  <input type="checkbox" name="basic" />
+                  <label for="basic">basic</label>
+                  <div class="category-count">(4)</div>
+                </div>
+
+                <div class="category-car">
+                  <input type="checkbox" name="standard" />
+                  <label for="standard">standard</label>
+                  <div class="category-count">(4)</div>
+                </div>
+
+                <div class="category-car">
+                  <input type="checkbox" name="medium" />
+                  <label for="medium">medium</label>
+                  <div class="category-count">(4)</div>
+                </div>
+
+                <div class="category-car">
+                  <input type="checkbox" name="premium" />
+                  <label for="premium">premium</label>
+                  <div class="category-count">(4)</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="car-category">
+              <div class="top-box">
+                <div class="head-title">fuel</div>
+                <div class="show-button"></div>
+              </div>
+
+              <div class="category-content">
+                <div class="category-car">
+                  <input type="checkbox" name="petrol" />
+                  <label for="petrol">petrol</label>
+                  <div class="category-count">(4)</div>
+                </div>
+
+                <div class="category-car">
+                  <input type="checkbox" name="electric" />
+                  <label for="electric">electric</label>
+                  <div class="category-count">(4)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="car-item-box">
+          <div class="car-item">
+            <div class="car-name">Fiat 500</div>
+            <div class="car-price-category">basic</div>
+            <div class="price">
+              $
+              <p>20</p>
+              <span>/day</span>
+            </div>
+            <div class="car-image">
+              <img src="../Assets/Image/Car Image/image (1).png" alt="" />
+            </div>
+            <div class="bottom-content">
+              <div class="car-feature">
+                <div class="feature-item">
+                  <i class="fa-solid fa-filter-circle-dollar"></i>
+                  <span>x1</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fa-solid fa-gas-pump"></i>
+                  <span>fuel</span>
+                </div>
+              </div>
+              <div class="rent-button">
+                rent now!<i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+          <div class="car-item">
+            <div class="car-name">suzuki celerio</div>
+            <div class="car-price-category">basic</div>
+            <div class="price">
+              $
+              <p>20</p>
+              <span>/day</span>
+            </div>
+            <div class="car-image">
+              <img src="../Assets/Image/Car Image/image (2).png" alt="" />
+            </div>
+            <div class="bottom-content">
+              <div class="car-feature">
+                <div class="feature-item">
+                  <i class="fa-solid fa-filter-circle-dollar"></i>
+                  <span>x1</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fa-solid fa-gas-pump"></i>
+                  <span>fuel</span>
+                </div>
+              </div>
+              <div class="rent-button">
+                rent now!<i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+          <div class="car-item">
+            <div class="car-name">tesla X</div>
+            <div class="car-price-category">premium</div>
+            <div class="price">
+              $
+              <p>20</p>
+              <span>/day</span>
+            </div>
+            <div class="car-image">
+              <img src="../Assets/Image/Car Image/image (3).png" alt="" />
+            </div>
+            <div class="bottom-content">
+              <div class="car-feature">
+                <div class="feature-item">
+                  <i class="fa-solid fa-filter-circle-dollar"></i>
+                  <span>x2</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fa-solid fa-charging-station"></i>
+                  <span>electric</span>
+                </div>
+              </div>
+              <div class="rent-button">
+                rent now!<i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+          <div class="car-item">
+            <div class="car-name">VW passat</div>
+            <div class="car-price-category">standard</div>
+            <div class="price">
+              $
+              <p>20</p>
+              <span>/day</span>
+            </div>
+            <div class="car-image">
+              <img src="../Assets/Image/Car Image/image (4).png" alt="" />
+            </div>
+            <div class="bottom-content">
+              <div class="car-feature">
+                <div class="feature-item">
+                  <i class="fa-solid fa-filter-circle-dollar"></i>
+                  <span>x1.3</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fa-solid fa-gas-pump"></i>
+                  <span>fuel</span>
+                </div>
+              </div>
+              <div class="rent-button">
+                rent now!<i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+          <div class="car-item">
+            <div class="car-name">BMW 3</div>
+            <div class="car-price-category">medium</div>
+            <div class="price">
+              $
+              <p>20</p>
+              <span>/day</span>
+            </div>
+            <div class="car-image">
+              <img src="../Assets/Image/Car Image/image (5).png" alt="" />
+            </div>
+            <div class="bottom-content">
+              <div class="car-feature">
+                <div class="feature-item">
+                  <i class="fa-solid fa-filter-circle-dollar"></i>
+                  <span>x1.6</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fa-solid fa-gas-pump"></i>
+                  <span>fuel</span>
+                </div>
+              </div>
+              <div class="rent-button">
+                rent now!<i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+          <div class="car-item">
+            <div class="car-name">tesla 3</div>
+            <div class="car-price-category">medium</div>
+            <div class="price">
+              $
+              <p>20</p>
+              <span>/day</span>
+            </div>
+            <div class="car-image">
+              <img src="../Assets/Image/Car Image/image (6).png" alt="" />
+            </div>
+            <div class="bottom-content">
+              <div class="car-feature">
+                <div class="feature-item">
+                  <i class="fa-solid fa-filter-circle-dollar"></i>
+                  <span>x1.6</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fa-solid fa-charging-station"></i>
+                  <span>electric</span>
+                </div>
+              </div>
+              <div class="rent-button">
+                rent now!<i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+          <div class="car-item">
+            <div class="car-name">audi q3</div>
+            <div class="car-price-category">medium</div>
+            <div class="price">
+              $
+              <p>20</p>
+              <span>/day</span>
+            </div>
+            <div class="car-image">
+              <img src="../Assets/Image/Car Image/image (7).png" alt="" />
+            </div>
+            <div class="bottom-content">
+              <div class="car-feature">
+                <div class="feature-item">
+                  <i class="fa-solid fa-filter-circle-dollar"></i>
+                  <span>x1.6</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fa-solid fa-gas-pump"></i>
+                  <span>fuel</span>
+                </div>
+              </div>
+              <div class="rent-button">
+                rent now!<i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+          <div class="car-item">
+            <div class="car-name">BMW 5</div>
+            <div class="car-price-category">premium</div>
+            <div class="price">
+              $
+              <p>20</p>
+              <span>/day</span>
+            </div>
+            <div class="car-image">
+              <img src="../Assets/Image/Car Image/image (8).png" alt="" />
+            </div>
+            <div class="bottom-content">
+              <div class="car-feature">
+                <div class="feature-item">
+                  <i class="fa-solid fa-filter-circle-dollar"></i>
+                  <span>x2</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fa-solid fa-gas-pump"></i>
+                  <span>fuel</span>
+                </div>
+              </div>
+              <div class="rent-button">
+                rent now!<i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+          <div class="car-item">
+            <div class="car-name">nissan leaf</div>
+            <div class="car-price-category">standard</div>
+            <div class="price">
+              $
+              <p>20</p>
+              <span>/day</span>
+            </div>
+            <div class="car-image">
+              <img src="../Assets/Image/Car Image/image (9).png" alt="" />
+            </div>
+            <div class="bottom-content">
+              <div class="car-feature">
+                <div class="feature-item">
+                  <i class="fa-solid fa-filter-circle-dollar"></i>
+                  <span>x1.3</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fa-solid fa-charging-station"></i>
+                  <span>electric</span>
+                </div>
+              </div>
+              <div class="rent-button">
+                rent now!<i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+          <div class="car-item">
+            <div class="car-name">mercedes g</div>
+            <div class="car-price-category">premium</div>
+            <div class="price">
+              $
+              <p>20</p>
+              <span>/day</span>
+            </div>
+            <div class="car-image">
+              <img src="../Assets/Image/Car Image/image (10).png" alt="" />
+            </div>
+            <div class="bottom-content">
+              <div class="car-feature">
+                <div class="feature-item">
+                  <i class="fa-solid fa-filter-circle-dollar"></i>
+                  <span>x2</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fa-solid fa-gas-pump"></i>
+                  <span>fuel</span>
+                </div>
+              </div>
+              <div class="rent-button">
+                rent now!<i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+          <div class="car-item">
+            <div class="car-name">smart EQ</div>
+            <div class="car-price-category">basic</div>
+            <div class="price">
+              $
+              <p>20</p>
+              <span>/day</span>
+            </div>
+            <div class="car-image">
+              <img src="../Assets/Image/Car Image/image (11).png" alt="" />
+            </div>
+            <div class="bottom-content">
+              <div class="car-feature">
+                <div class="feature-item">
+                  <i class="fa-solid fa-filter-circle-dollar"></i>
+                  <span>x1</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fa-solid fa-charging-station"></i>
+                  <span>electric</span>
+                </div>
+              </div>
+              <div class="rent-button">
+                rent now!<i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+          <div class="car-item">
+            <div class="car-name">toyota corolla</div>
+            <div class="car-price-category">standard</div>
+            <div class="price">
+              $
+              <p>20</p>
+              <span>/day</span>
+            </div>
+            <div class="car-image">
+              <img src="../Assets/Image/Car Image/image (12).png" alt="" />
+            </div>
+            <div class="bottom-content">
+              <div class="car-feature">
+                <div class="feature-item">
+                  <i class="fa-solid fa-filter-circle-dollar"></i>
+                  <span>x1.3</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fa-solid fa-gas-pump"></i>
+                  <span>fuel</span>
+                </div>
+              </div>
+              <div class="rent-button">
+                rent now!<i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Car Page End -->
+
+    <!-- Testimonials Page Start -->
+    <div class="testimonials-page section" id="testi">
+      <div class="head-title">
+        What are the clients <br />
+        saying about us
+      </div>
+
+      <div class="testimonials-container swiper mySwiper">
+        <div class="testimonials-box swiper-wrapper">
+          <div class="profile-box swiper-slide">
+            <div class="top-box">
+              <div class="profile-image">
+                <img src="../Assets/Image/Image-5.jpg" alt="" />
+              </div>
+              <div class="profile-info">
+                <div class="profile-name">mango</div>
+                <div class="profile-job">creator</div>
+              </div>
+            </div>
+
+            <div class="middle-box">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
+              perspiciatis maiores, quisquam similique officia magni autem
+              veritatis ea architecto. Neque animi, ad mollitia nostrum corporis
+              exercitationem adipisci ea laboriosam atque. Quo ab similique
+              necessitatibus molestias ullam aliquam odio vitae facere!
+            </div>
+
+            <div class="bottom-box">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <div class="profile-box swiper-slide">
+            <div class="top-box">
+              <div class="profile-image">
+                <img src="../Assets/Image/Image-5.jpg" alt="" />
+              </div>
+              <div class="profile-info">
+                <div class="profile-name">lina</div>
+                <div class="profile-job">creator</div>
+              </div>
+            </div>
+
+            <div class="middle-box">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
+              perspiciatis maiores, quisquam similique officia magni autem
+              veritatis ea architecto. Neque animi, ad mollitia nostrum corporis
+              exercitationem adipisci ea laboriosam atque. Quo ab similique
+              necessitatibus molestias ullam aliquam odio vitae facere!
+            </div>
+
+            <div class="bottom-box">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <div class="profile-box swiper-slide">
+            <div class="top-box">
+              <div class="profile-image">
+                <img src="../Assets/Image/Image-5.jpg" alt="" />
+              </div>
+              <div class="profile-info">
+                <div class="profile-name">poly</div>
+                <div class="profile-job">creator</div>
+              </div>
+            </div>
+
+            <div class="middle-box">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
+              perspiciatis maiores, quisquam similique officia magni autem
+              veritatis ea architecto. Neque animi, ad mollitia nostrum corporis
+              exercitationem adipisci ea laboriosam atque. Quo ab similique
+              necessitatibus molestias ullam aliquam odio vitae facere!
+            </div>
+
+            <div class="bottom-box">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <div class="profile-box swiper-slide">
+            <div class="top-box">
+              <div class="profile-image">
+                <img src="../Assets/Image/Image-5.jpg" alt="" />
+              </div>
+              <div class="profile-info">
+                <div class="profile-name">lina</div>
+                <div class="profile-job">creator</div>
+              </div>
+            </div>
+
+            <div class="middle-box">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
+              perspiciatis maiores, quisquam similique officia magni autem
+              veritatis ea architecto. Neque animi, ad mollitia nostrum corporis
+              exercitationem adipisci ea laboriosam atque. Quo ab similique
+              necessitatibus molestias ullam aliquam odio vitae facere!
+            </div>
+
+            <div class="bottom-box">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <div class="profile-box swiper-slide">
+            <div class="top-box">
+              <div class="profile-image">
+                <img src="../Assets/Image/Image-5.jpg" alt="" />
+              </div>
+              <div class="profile-info">
+                <div class="profile-name">lina</div>
+                <div class="profile-job">creator</div>
+              </div>
+            </div>
+
+            <div class="middle-box">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
+              perspiciatis maiores, quisquam similique officia magni autem
+              veritatis ea architecto. Neque animi, ad mollitia nostrum corporis
+              exercitationem adipisci ea laboriosam atque. Quo ab similique
+              necessitatibus molestias ullam aliquam odio vitae facere!
+            </div>
+
+            <div class="bottom-box">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <div class="profile-box swiper-slide">
+            <div class="top-box">
+              <div class="profile-image">
+                <img src="../Assets/Image/Image-5.jpg" alt="" />
+              </div>
+              <div class="profile-info">
+                <div class="profile-name">lina</div>
+                <div class="profile-job">creator</div>
+              </div>
+            </div>
+
+            <div class="middle-box">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
+              perspiciatis maiores, quisquam similique officia magni autem
+              veritatis ea architecto. Neque animi, ad mollitia nostrum corporis
+              exercitationem adipisci ea laboriosam atque. Quo ab similique
+              necessitatibus molestias ullam aliquam odio vitae facere!
+            </div>
+
+            <div class="bottom-box">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <div class="profile-box swiper-slide"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <!-- Testimonials Page End -->
+
+    <!-- Faq Page Start -->
+    <div class="faq-page" id="faq">
+      <div class="container">
+        <div class="head-title" data-small-title="frequently asked question">
+          Question that are always asked
+        </div>
+
+        <div class="sub-title">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro,
+          minus.<br />Lorem ipsum dolor sit amet consectetur.<br />Lorem ipsum
+          dolor sit.
+        </div>
+
+        <div class="faq-container">
+          <div class="faq-item" id="quest1">
+            <div class="title-quest">
+              <h2>How do you calculate the estimated rental cost of a car?</h2>
+              <a href="#quest1"
+                ><i class="fa-solid fa-caret-down help-button"></i
+              ></a>
+            </div>
+            <div class="answer">
+              We calculate the total rental cost by initially adding the rental
+              amount per day multiplied by the number of days the customer
+              intends to rent the car. Depending on the chosen car's price
+              category, we apply a multiplier. For instance, if the car's price
+              category is Premium, the price should be multiplied by two, and so
+              on. If the driver has a driving license for less than 5 years, we
+              increase the amount by 20%.
+            </div>
+          </div>
+          <div class="faq-item" id="quest2">
+            <div class="title-quest">
+              <h2>
+                What happens if the driver has a license for less than 3 years
+                and selects a Premium category car?
+              </h2>
+              <a href="#quest2"
+                ><i class="fa-solid fa-caret-down help-button"></i
+              ></a>
+            </div>
+            <div class="answer">
+              If the driver has a license for less than 3 years and chooses to
+              rent a Premium category car, we inform them that they cannot rent
+              that specific car.
+            </div>
+          </div>
+          <div class="faq-item" id="quest3">
+            <div class="title-quest">
+              <h2>
+                How does the cost change when there are fewer than 3 available
+                copies of a particular model in the rental agency?
+              </h2>
+              <a href="#quest3"
+                ><i class="fa-solid fa-caret-down help-button"></i
+              ></a>
+            </div>
+            <div class="answer">
+              If there are fewer than 3 copies of a specific model available in
+              the rental agency, the cost should increase by 15%.
+            </div>
+          </div>
+          <div class="faq-item" id="quest4">
+            <div class="title-quest">
+              <h2>
+                How is the fuel cost calculated, and how is it incorporated into
+                the rental costs?
+              </h2>
+              <a href="#quest4"
+                ><i class="fa-solid fa-caret-down help-button"></i
+              ></a>
+            </div>
+            <div class="answer">
+              We calculate the fuel cost based on the estimated kilometers to be
+              driven, the fuel price, and the average fuel consumption. This
+              cost is then added to the overall rental expenses. Finally, the
+              customer should see both the net and gross rental amounts, with
+              the gross rental price being the net price increased by 23%.
+              Additionally, we display a breakdown of the components, such as
+              fuel cost, base rental price multiplied by the number of days,
+              etc.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Faq Page End -->
+  </body>
+
+  <!-- JavaScript Link -->
+  <script src="../Assets/Script/script.js"></script>
+
+  <!-- CDN swiperjs.com Swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesperColumn: 2,
+      spaceBetween: 10,
+      centeredSlides: false,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        dynamicBullets: true,
+        hide: true,
+      },
+      breakpoints: {
+        780: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      },
+    });
+  </script>
+</html>
